@@ -1,104 +1,196 @@
-/* RESET BÁSICO */
+/*Se adequa a quaçquer tipo d etela*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Estilo para todo o corpo do site*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: gainsboro;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Estrutura principal do Carrosel*/
+.carousel.container{
+    width: 800%; /*Largura */
+    height: 400px; /*Altura */
+    border-radius: 12px; /*colocar borda arredondada */
+    overflow: hidden; 
+    position: relative;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);/*sombra de fundo */
+}
+
+/*Ocultar os radios buttons*/
+.carousel-container input[type="radio"]{
+    display: none;/*Não aparecer os formatos de bolinhas no carrossel*/
+}
+
+/* Caixa contendo todas as imagens */
+.slides{
+    display: flex; /*Coloca as imagens em linha */
+    width: 300%; /*100 x quantidade de slides (3 x 100% = 300%) */
+    height: 100%; /*Altura de 100% */
+    transition: transform 0.6s ease-in-out; /*Transição para mudença de imagens*/
+}
+
+/*Estilo individual de cada slide*/
+.slide{
+    width: 33.333%; /*100% / 3 slides (100% (dividido) 3 slides */
+    position: relative;  
+}
+
+.slide img{
+    width: 100%; /*Largura de 100% */
+    height: 100%; /*Altura de 100% */
+    object-fit: cover; /* preencher toralmente o container pai sem peder suas proporções originais */
+}
+
+/*Legenda sobre a imagem*/
+.caption{
+    position: absolute; /*Posição absoluta */
+    bottom: 20px; /*Espaço acima */
+    left: 20px; /*Espaço a esquerda */
+    color: #fff; /*Cor do texto da legenda */
+    background-color: rgba(0,0,0,0.5); /*Cor de fundo da legenda */
+    padding: 10px 18px; /*Espaçamento interno da legenda */
+    border-radius: 6px; /*Borda arredondada da legenda */
+    font-size: 1.1rem; /*Tamanho da fonte da legenda */
+}
+
+/*Navegação por bolinhas/ barras */
+.navigation{
+    position: absolute; /*Posição absoluta */
+    bottom: 20px; /*Espaço acima */
+    left: 50%; /*Espaço a esquerda */
+    transform: translateX(-50%); /*Centraliza as bolinhas */
+    display: flex; /*Coloca as bolinhas em linha */
+    gap: 12px; /*Espaçamento entre as bolinhas */
+}
+.bar{
+    width: 14px; /* Largura da bolinha */
+    height: 14px; /* Altura da bolinha */
+    border-radius: 50%; /* Torna a bolinha circular */
+    background-color: #fff; /* Cor da bolinha */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: background-color 0.3s, transform 0.3s; /* Animação suave ao mudar a cor da bolinha */
+}
+
+.bar:hover{
+    background-color: #f7f7f7; /* Cor da bolinha ao passar o mouse */
+    transform: scale(1.2); /* Aumenta a bolinha ao passar o mouse */
+}
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    background-color: #f8f9fa;
-    line-height: 1.6;
-
-    /* Mantém o rodapé no final da tela */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
 }
 
-/* ESTILO DO CABEÇALHO */
-.header {
-    background-color: #1e293b; /* Tom escuro elegante */
-    color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Estrutura principal do Carrossel */
+.carousel-container {
+  width: 800px;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.header .logo a {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
+/* Ocultar os radio buttons */
+.carousel-container input[type="radio"] {
+  display: none;
 }
 
-.header .nav-menu ul {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
+/* Wrapper contendo todas as imagens lado a lado */
+.slides {
+  display: flex;
+  width: 300%; /* 100% x quantidade de slides (3 x 100% = 300%) */
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
 }
 
-.header .nav-menu a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+/* Estilo individual de cada slide */
+.slide {
+  width: 33.333%; /* 100% / 3 slides */
+  position: relative;
 }
 
-.header .nav-menu a:hover {
-    color: #38bdf8; /* Cor azul ao passar o mouse */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* O CONTEÚDO PRINCIPAL OCUPA O ESPAÇO SOBRANTE */
-.main-content {
-    flex: 1; /* Faz esta área expandir empurrando o rodapé para baixo */
+/* Legenda sobre a imagem */
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 1.1rem;
 }
 
-/* ESTILO DO RODAPÉ */
-.footer {
-    background-color: #0f172a;
-    color: #94a3b8;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
+/* Navegação por bolinhas / barras */
+.navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
 }
 
-.footer .destaque {
-    color: #38bdf8;
-    font-weight: bold;
+.bar {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.footer .social-links {
-    display: flex;
-    gap: 1rem;
+.bar:hover {
+  background-color: #fff;
+  transform: scale(1.2);
 }
 
-.footer .social-links a {
-    color: #94a3b8;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+/* --- Lógica de Transição no CSS Puro --- */
+
+/* Movimento dos slides conforme o radio selecionado */
+#slide1:checked ~ .slides {
+  transform: translateX(0%);
 }
 
-.footer .social-links a:hover {
-    color: #ffffff;
+#slide2:checked ~ .slides {
+  transform: translateX(-33.333%);
 }
 
-/* RESPONSIVIDADE (Dispositivos Móveis) */
-@media (max-width: 600px) {
-    .header {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
+#slide3:checked ~ .slides {
+  transform: translateX(-66.666%);
+}
 
-    .header .nav-menu ul {
-        gap: 1rem;
-    }
+/* Destacar a bolinha referente ao slide ativo */
+#slide1:checked ~ .navigation .bar:nth-child(1),
+#slide2:checked ~ .navigation .bar:nth-child(2),
+#slide3:checked ~ .navigation .bar:nth-child(3) {
+  background-color: #fff;
+  transform: scale(1.2);
+  width: 28px;
+  border-radius: 10px; /* Transforma a bolinha num bastão arredondado */
 }

@@ -3,41 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
-    <!--Link para o arquivo CSS-->
+    <title>Carrosel em HTML e CSS</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
-    <!-- CABEÇALHO -->
-    <header class="header">
-        <div class="logo">
-            <a href="#">Hendrick Santos</a>
-        </div>
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#sobre">Sobre Mim</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Conteúdo Principal -->
-    <main class="main-content">
-        <section style="text-align: center;padding: 50px 20px;">
-            <h2>Área do aluno</h2>
-            <img src="8086a344-52d5-47f0-a1de-27cd4771bc7b.jpg" alt="Minha foto" width="300" height="400">
-            <p>Meu nome é Hendrick Oliveira Santos, tenho 16 anos e estou cursando Desenvolvimento de Sistemas. Meu objetivo é desenvolver minhas habilidades técnicas e socioemocionais, aprimorando meus conhecimentos e buscando sempre trabalhar em equipe, com responsabilidade, colaboração e dedicação.</p>
-        </section>
-    </main>
-    <!-- Rodapé -->
-    <footer class="footer"
-    <p>&copy;2026 Meu Portfólio. Desenvolvido por:</p>
-    <div class="social-links">
-        <a href="#" target="_blank">github</a>
-        <a href="#" target="_blank">Linkedin</a>
-        <a href="#" target="_blank">E-mail</a>
+    <!-- Criação da div que irá receber a estrutura de controle do carrossel -->
+<div class="carousel-container">
+        <!-- Radio Buttons (invisíveis) para controle do slide-->
+        <input type="radio" name="slider" id="slide1" checked> 
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        
+        <!-- Container dos Slides (imagens)-->
+         <div class="slides">
+            <div class="slide-1">
+                <img src="https://picsum.photos/800/400?random=1" alt="Imagem 1">
+                <div class="caption">Primeira Imagem</div>
+            </div>
+            <div class="slide-2">
+                <img src="https://picsum.photos/800/400?random=2" alt="Imagem 2">
+                <div class="caption">Segunda Imagem</div>
+            </div>
+            <div class="slide-3">
+                <img src="https://picsum.photos/800/400?random=3" alt="Imagem 3">
+                <div class="caption">Terceira Imagem</div>
+            </div>
+         </div>
 
-    </div>    
+         <!--Navegação por Bolinhos (Bullets)-->
+        <div class="navigation">
+            <label for="slide1" class="bar"></label>
+            <label for="slide2" class="bar"></label>
+            <label for="slide3" class="bar"></label>
+        </div>    
+</div>
 </body>
 </html>
